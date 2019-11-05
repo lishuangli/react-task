@@ -3,12 +3,31 @@
  * @Author: lishuangli
  * @Date: 2019-11-05 21:57:44
  * @LastEditors: lishuangli
- * @LastEditTime: 2019-11-05 22:41:11
+ * @LastEditTime: 2019-11-05 22:43:31
  */
 import React, { Component } from 'react';
 import './index.less';
 
-class Confirm extends Component {
+
+class Confirm extends ConfirmComponent {
+
+  async componentDidMount(){
+    const confirm = this.info
+    let res = await confirm("确定删除吗")
+    if(res) {
+        console.log("是")
+    } else {
+        console.log("否")
+    }
+}
+  render() {
+    return super.render()
+  }
+}
+
+
+
+class ConfirmComponent extends Component {
 
   constructor() {
     super();
@@ -17,6 +36,7 @@ class Confirm extends Component {
     }
   }
 
+  // 不会写了, 编不出来了
   info = (v) => {
     this.setState({
       msg: v
@@ -36,22 +56,5 @@ class Confirm extends Component {
   }
 }
 
+export default Confirm;
 
-
-class App extends Confirm {
-
-  async componentDidMount(){
-    const confirm = this.info
-    let res = await confirm("确定删除吗")
-    if(res) {
-        console.log("是")
-    } else {
-        console.log("否")
-    }
-}
-  render() {
-    return super.render()
-  }
-}
-
-export default App;
