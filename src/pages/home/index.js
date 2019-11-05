@@ -3,10 +3,11 @@
  * @Author: lishuangli
  * @Date: 2019-11-05 10:09:30
  * @LastEditors: lishuangli
- * @LastEditTime: 2019-11-05 21:33:14
+ * @LastEditTime: 2019-11-05 22:38:01
  */
 import React, { Fragment } from 'react';
 import APP from '../../components/InputNumber';
+import Confirm from '../../components/Confirm';
 import './index.less'
 
 
@@ -19,7 +20,7 @@ function Home() {
 			</div>
 			<div className='wrap'>
 				<h1>第七题</h1>
-				<div className='button'>Button</div>
+				<Confirm />
 			</div>
 		</Fragment>
 	)
